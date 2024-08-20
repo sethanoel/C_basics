@@ -1,0 +1,11 @@
+## TODO
+- [ ] Python, C, and C++ gaming engines?
+  - Other languages? MATLAB was pretty easy... Not a suggestion though
+- [ ] Dev platform? (RPi?)
+- [ ] Publish platform?
+- [ ] Type of game?
+- [ ] Game ideas?
+- [ ] Game at all?
+- [ ] Reusable engine?
+- [ ] Funtional understanding of C++
+- [ ] Large project syntax and best practices
