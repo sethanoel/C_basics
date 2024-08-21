@@ -2,14 +2,10 @@
 
 int main(int argc, char *argv[])
 {
-    int i;
+    gtk_init(&argc, &argv); // Initialize GTK
+    GtkWidget *win = gtk_window_new(GTK_WINDOW_TOPLEVEL); // Create window widget
+    gtk_widget_show(win); // Show window
+    gtk_main(); // Run GTK main loop
 
-    printf("argc = %d\n", argc);
-    
-    for( i = 0; i < argc; i++ )
-    {
-        printf("%s\n", argv[i]);
-    }
-
-    printf("end\n");
+    return 0;
 }
