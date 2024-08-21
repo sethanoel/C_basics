@@ -1,6 +1,6 @@
 #include "cmain.h"
 
-// Initialization
+// Initializations
 uint Count = 0;
 
 // Main
@@ -18,14 +18,19 @@ int main(int argc, char *argv[])
     GtkWidget *btn2 = gtk_button_new_with_label("Close Window");
     g_signal_connect(btn2, "clicked", G_CALLBACK(end_program), NULL);
 
-    GtkWidget *box1 = gtk_vbox_new(FALSE, 5); // Create vertical box widget (container)
-    GtkWidget *box2 = gtk_hbox_new(FALSE, 5); // Create horizontal box widget (container)
-    gtk_box_pack_start(GTK_BOX(box2), btn1, TRUE, TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(box2), btn2, TRUE, TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(box1), lbl, TRUE, TRUE, 0);
-    gtk_box_pack_start(GTK_BOX(box1), box2, TRUE, TRUE, 0);
+    GtkWidget *tbl = gtk_table_new(2, 2, TRUE); // Create table widget
+    gtk_table_attach_defaults(GTK_TABLE(tbl), lbl, 0, 2, 0, 1);
+    gtk_table_attach_defaults(GTK_TABLE(tbl), btn1, 0, 1, 1, 2);
+    gtk_table_attach_defaults(GTK_TABLE(tbl), btn2, 1, 2, 1, 2);
 
-    gtk_container_add(GTK_CONTAINER(win), box1); // Add box to window. Windows can only have one widget, boxes can have unlimitted.
+    // GtkWidget *vbox = gtk_vbox_new(FALSE, 5); // Create vertical box widget (container)
+    // GtkWidget *hbox = gtk_hbox_new(FALSE, 5); // Create horizontal box widget (container)
+    // gtk_box_pack_start(GTK_BOX(hbox), btn1, TRUE, TRUE, 0);
+    // gtk_box_pack_start(GTK_BOX(hbox), btn2, TRUE, TRUE, 0);
+    // gtk_box_pack_start(GTK_BOX(vbox), lbl, TRUE, TRUE, 0);
+    // gtk_box_pack_start(GTK_BOX(vbox), hbox, TRUE, TRUE, 0);
+
+    gtk_container_add(GTK_CONTAINER(win), vbox); // Add box to window. Windows can only have one widget, boxes can have unlimitted.
 
     gtk_widget_show_all(win); // Show window container and everything in it
 
